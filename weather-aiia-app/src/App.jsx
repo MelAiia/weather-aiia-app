@@ -21,7 +21,7 @@ function App() {
 
         <Forecast />
 
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );
