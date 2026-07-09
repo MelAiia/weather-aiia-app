@@ -1,17 +1,26 @@
+:root {
+  --background: #09111f;
+  --card: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.12);
+
+  --text: #ffffff;
+  --text-light: rgba(255, 255, 255, 0.75);
+
+  --accent: #82cfff;
+}
+
 body {
   margin: 0;
-  background: #0f1722;
+  font-family: "Manrope", sans-serif;
+  background: #09111f;
 }
 
 .app {
   min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.weather-card {
-  width: 1200px;
-  border-radius: 30px;
-  padding: 30px;
+  padding: 40px;
 }
