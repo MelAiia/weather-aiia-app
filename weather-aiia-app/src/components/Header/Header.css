@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 28px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  font-size: 46px;
+  color: #82cfff;
+}
+
+.logo span {
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.settings-button {
+  width: 46px;
+  height: 46px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.settings-button svg {
+  font-size: 20px;
+}
+
+.settings-button:hover {
+  transform: rotate(30deg);
+  background: rgba(255, 255, 255, 0.15);
+}
