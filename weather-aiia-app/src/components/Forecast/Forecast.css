@@ -44,6 +44,8 @@
   gap: 12px;
 
   transition: 0.25s ease;
+
+  min-height: 170px;
 }
 
 .forecast-card:hover {
