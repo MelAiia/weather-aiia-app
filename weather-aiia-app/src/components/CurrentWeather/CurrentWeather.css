@@ -46,6 +46,8 @@
   font-size: 18px;
 
   font-weight: 600;
+
+  letter-spacing: 0.5px;
 }
 
 .weather-body {
@@ -53,7 +55,7 @@
 
   justify-content: space-between;
 
-  align-items: center;
+  align-items: flex-start;
 
   margin: 20px 0;
 }
@@ -89,7 +91,7 @@
 }
 
 .weather-icon svg {
-  font-size: 140px;
+  font-size: 170px;
 
   color: var(--accent);
 }
