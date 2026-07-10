@@ -1,5 +1,7 @@
+import "./Forecast.css";
+
 function Forecast() {
-  return <div>Forecast</div>;
+  return <div className="forecast">Forecast</div>;
 }
 
 export default Forecast;
