@@ -14,26 +14,26 @@
   justify-content: space-between;
 }
 
-.weather-top {
+.weather-header {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .city {
   margin: 0;
 
+  color: white;
+
   font-size: 34px;
 
   font-weight: 700;
-
-  color: white;
 }
 
 .date {
   margin: 0;
 
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--text-secondary);
 
   font-size: 15px;
 }
@@ -48,46 +48,62 @@
   font-weight: 600;
 }
 
-.weather-icon {
-  display: flex;
-
-  justify-content: center;
-}
-
-.weather-icon svg {
-  font-size: 130px;
-
-  color: var(--accent);
-}
-
-.weather-bottom {
+.weather-body {
   display: flex;
 
   justify-content: space-between;
 
-  align-items: flex-end;
+  align-items: center;
+
+  margin: 20px 0;
+}
+
+.temperature-block {
+  display: flex;
+
+  flex-direction: column;
 }
 
 .temperature {
   margin: 0;
 
-  font-size: 82px;
+  font-size: 84px;
 
   font-weight: 700;
 
-  color: white;
-
   line-height: 1;
+
+  color: white;
 }
 
 .feels-like {
-  margin: 0;
+  margin-top: 10px;
 
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--text-secondary);
 
   font-size: 15px;
 }
 
 .feels-like strong {
   color: white;
+}
+
+.weather-icon svg {
+  font-size: 140px;
+
+  color: var(--accent);
+}
+
+.weather-footer {
+  display: flex;
+
+  justify-content: flex-end;
+}
+
+.weather-footer p {
+  margin: 0;
+
+  font-size: 14px;
+
+  color: var(--text-secondary);
 }
