@@ -1,15 +1,46 @@
 .weather-sidebar {
-  min-height: 360px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
 
-  border-radius: 24px;
-
+.info-card {
   background: rgba(255, 255, 255, 0.05);
 
   border: 1px solid rgba(255, 255, 255, 0.08);
 
-  color: white;
+  border-radius: 18px;
+
+  padding: 18px;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+
+  gap: 8px;
+
+  transition: 0.25s;
+}
+
+.info-card:hover {
+  transform: translateY(-3px);
+}
+
+.info-card svg {
+  font-size: 28px;
+
+  color: var(--accent);
+}
+
+.info-card span {
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+.info-card strong {
+  color: white;
+
+  font-size: 26px;
+
+  font-weight: 700;
 }
