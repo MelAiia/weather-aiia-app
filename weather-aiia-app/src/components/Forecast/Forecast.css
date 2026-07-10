@@ -1,15 +1,91 @@
 .forecast {
-  min-height: 170px;
+  padding: 28px;
 
   border-radius: 24px;
 
   background: rgba(255, 255, 255, 0.05);
 
   border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.forecast-title {
+  margin: 0 0 24px;
 
   color: white;
 
+  font-size: 22px;
+
+  font-weight: 600;
+}
+
+.forecast-grid {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 18px;
+}
+
+.forecast-card {
+  padding: 18px;
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
   display: flex;
-  justify-content: center;
+
+  flex-direction: column;
+
   align-items: center;
+
+  gap: 12px;
+
+  transition: 0.25s ease;
+}
+
+.forecast-card:hover {
+  transform: translateY(-5px);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border-color: rgba(117, 205, 255, 0.25);
+}
+
+.forecast-day {
+  margin: 0;
+
+  color: white;
+
+  font-weight: 600;
+}
+
+.forecast-icon svg {
+  font-size: 56px;
+
+  color: var(--accent);
+}
+
+.forecast-temp {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.forecast-temp span {
+  font-size: 24px;
+
+  font-weight: 700;
+
+  color: white;
+}
+
+.forecast-temp small {
+  font-size: 15px;
+
+  color: var(--text-secondary);
 }
