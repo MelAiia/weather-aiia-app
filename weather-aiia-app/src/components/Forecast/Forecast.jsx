@@ -1,4 +1,7 @@
 import "./Forecast.css";
+
+import ForecastCard from "./ForecastCard";
+
 import { WiDaySunny, WiRain, WiCloud, WiThunderstorm } from "react-icons/wi";
 
 const forecast = [
@@ -15,17 +18,8 @@ function Forecast() {
       <h3 className="forecast-title">5-Day Forecast</h3>
 
       <div className="forecast-grid">
-        {forecast.map((item) => (
-          <div className="forecast-card" key={item.day}>
-            <p className="forecast-day">{item.day}</p>
-
-            <div className="forecast-icon">{item.icon}</div>
-
-            <div className="forecast-temp">
-              <span>{item.max}°</span>
-              <small>{item.min}°</small>
-            </div>
-          </div>
+        {forecast.map((day) => (
+          <ForecastCard key={day.day} day={day} />
         ))}
       </div>
     </section>

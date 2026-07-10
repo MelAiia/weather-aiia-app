@@ -1,0 +1,65 @@
+.forecast-card {
+  padding: 18px;
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 12px;
+
+  transition: 0.3s ease;
+}
+
+.forecast-card:hover {
+  transform: translateY(-6px);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border-color: var(--accent);
+
+  cursor: pointer;
+}
+
+.forecast-day {
+  margin: 0;
+
+  color: white;
+
+  font-weight: 600;
+}
+
+.forecast-icon svg {
+  font-size: 54px;
+
+  color: var(--accent);
+}
+
+.forecast-temp {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.forecast-temp span {
+  font-size: 24px;
+
+  font-weight: 700;
+
+  color: white;
+}
+
+.forecast-temp small {
+  color: var(--text-secondary);
+
+  font-size: 15px;
+}
