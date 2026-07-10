@@ -1,5 +1,7 @@
+import "./CurrentWeather.css";
+
 function CurrentWeather() {
-  return <div>Current Weather</div>;
+  return <div className="current-weather">Current Weather</div>;
 }
 
 export default CurrentWeather;
