@@ -1,5 +1,7 @@
+import "./WeatherSidebar.css";
+
 function WeatherSidebar() {
-  return <div>Sidebar</div>;
+  return <div className="weather-sidebar">Sidebar</div>;
 }
 
 export default WeatherSidebar;
