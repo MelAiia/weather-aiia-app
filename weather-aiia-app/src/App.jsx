@@ -5,19 +5,25 @@ import SearchForm from "./components/SearchForm/SearchForm";
 import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
 import WeatherSidebar from "./components/WeatherSidebar/WeatherSidebar";
 import Forecast from "./components/Forecast/Forecast";
-import Footer from "./components/Footer/Footer";
+// import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <div className="app">
+    <div className="app theme-clear">
       <div className="weather-card">
         <Header />
+
         <SearchForm />
 
-        <div className="weather-content">
-          <CurrentWeather />
-          <WeatherSidebar />
-        </div>
+        <main className="weather-layout">
+          <section className="main-column">
+            <CurrentWeather />
+          </section>
+
+          <aside className="side-column">
+            <WeatherSidebar />
+          </aside>
+        </main>
 
         <Forecast />
 
