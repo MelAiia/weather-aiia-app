@@ -9,5 +9,24 @@ export async function getCurrentWeather(city) {
     throw new Error(`API Error: ${response.status}`);
   }
 
-  return await response.json();
+  const data = await response.json();
+
+  return {
+    city: data.name,
+    country: data.sys.country,
+
+    temperature: Math.round(data.main.temp),
+    feelsLike: Math.round(data.main.feels_like),
+
+    description: data.weather[0].description,
+    icon: data.weather[0].icon,
+
+    humidity: data.main.humidity,
+    wind: Math.round(data.wind.speed),
+
+    visibility: Math.round(data.visibility / 1000),
+
+    sunrise: data.sys.sunrise,
+    sunset: data.sys.sunset,
+  };
 }

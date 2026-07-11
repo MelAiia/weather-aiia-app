@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import { getCurrentWeather } from "./services/weatherApi";
-
 import "./App.css";
 
 import Header from "./components/Header/Header";
@@ -11,16 +8,6 @@ import Forecast from "./components/Forecast/Forecast";
 // import Footer from "./components/Footer/Footer";
 
 function App() {
-  useEffect(() => {
-    getCurrentWeather("Kyiv")
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
   return (
     <div className="app theme-clear">
       <div className="weather-card">

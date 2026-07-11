@@ -1,28 +1,52 @@
+import { useEffect, useState } from "react";
+import { getCurrentWeather } from "../../services/weatherApi";
+
 import "./CurrentWeather.css";
 
 import WeatherIcon from "../WeatherIcon/WeatherIcon";
 
 function CurrentWeather() {
+  const [weather, setWeather] = useState(null);
+
+  useEffect(() => {
+    getCurrentWeather("Kyiv")
+      .then((data) => {
+        setWeather(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+  if (!weather) {
+    return (
+      <section className="current-weather">
+        <p className="loading">Loading weather...</p>
+      </section>
+    );
+  }
   return (
     <section className="current-weather">
       <div className="weather-header">
-        <h1 className="city">Kyiv, Ukraine</h1>
+        <h1 className="city">
+          {weather.city}, {weather.country}
+        </h1>
 
         <p className="date">Friday • 10 July 2026</p>
 
-        <p className="description">Light Rain</p>
+        <p className="description">{weather.description}</p>
       </div>
 
       <div className="weather-body">
         <div className="temperature-block">
-          <h2 className="temperature">23°</h2>
+          <h2 className="temperature">{weather.temperature}°</h2>
 
           <p className="feels-like">
-            Feels like <strong>21°</strong>
+            Feels like <strong>{weather.feelsLike}°</strong>
           </p>
         </div>
 
-        <WeatherIcon code="10d" size={150} />
+        <WeatherIcon code={weather.icon} size={150} />
       </div>
 
       <div className="weather-footer">
