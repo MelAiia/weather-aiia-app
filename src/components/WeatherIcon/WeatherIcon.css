@@ -4,4 +4,10 @@
   align-items: center;
 
   color: var(--accent);
+
+  transition: transform 0.35s ease;
+}
+
+.weather-icon svg {
+  filter: drop-shadow(0 0 14px rgba(130, 207, 255, 0.25));
 }

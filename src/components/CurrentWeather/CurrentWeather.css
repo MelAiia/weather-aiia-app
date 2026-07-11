@@ -90,12 +90,6 @@
   color: white;
 }
 
-.weather-icon svg {
-  font-size: 170px;
-
-  color: var(--accent);
-}
-
 .weather-footer {
   display: flex;
 

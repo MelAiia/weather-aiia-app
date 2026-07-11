@@ -1,3 +1,5 @@
+import "./WeatherIcon.css";
+
 import {
   WiDaySunny,
   WiNightClear,
@@ -14,7 +16,7 @@ import {
 } from "react-icons/wi";
 
 function WeatherIcon({ code, size = 120 }) {
-  const icons = {
+  const weatherIcons = {
     "01d": <WiDaySunny size={size} />,
     "01n": <WiNightClear size={size} />,
 
@@ -45,7 +47,7 @@ function WeatherIcon({ code, size = 120 }) {
 
   return (
     <div className="weather-icon">
-      {icons[code] || <WiDaySunny size={size} />}
+      {weatherIcons[code] || <WiDaySunny size={size} />}
     </div>
   );
 }

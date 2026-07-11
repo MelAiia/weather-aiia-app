@@ -1,5 +1,5 @@
 import "./CurrentWeather.css";
-import { WiDayRain } from "react-icons/wi";
+
 import WeatherIcon from "../WeatherIcon/WeatherIcon";
 
 function CurrentWeather() {
