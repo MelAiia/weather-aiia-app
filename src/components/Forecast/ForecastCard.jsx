@@ -1,11 +1,12 @@
 import "./ForecastCard.css";
+import WeatherIcon from "../WeatherIcon/WeatherIcon";
 
 function ForecastCard({ day }) {
   return (
     <div className="forecast-card">
       <p className="forecast-day">{day.day}</p>
 
-      <div className="forecast-icon">{day.icon}</div>
+      <WeatherIcon code={day.code} size={60} />
 
       <div className="forecast-temp">
         <span>{day.max}°</span>

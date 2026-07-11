@@ -1,5 +1,6 @@
 import "./CurrentWeather.css";
 import { WiDayRain } from "react-icons/wi";
+import WeatherIcon from "../WeatherIcon/WeatherIcon";
 
 function CurrentWeather() {
   return (
@@ -21,9 +22,7 @@ function CurrentWeather() {
           </p>
         </div>
 
-        <div className="weather-icon">
-          <WiDayRain />
-        </div>
+        <WeatherIcon code="10d" size={150} />
       </div>
 
       <div className="weather-footer">
