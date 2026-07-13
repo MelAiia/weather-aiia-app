@@ -1,23 +1,8 @@
-import { useEffect, useState } from "react";
-import { getCurrentWeather } from "../../services/weatherApi";
-
 import "./CurrentWeather.css";
 
 import WeatherIcon from "../WeatherIcon/WeatherIcon";
 
-function CurrentWeather() {
-  const [weather, setWeather] = useState(null);
-
-  useEffect(() => {
-    getCurrentWeather("Kyiv")
-      .then((data) => {
-        setWeather(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
-
+function CurrentWeather({ weather }) {
   if (!weather) {
     return (
       <section className="current-weather">
