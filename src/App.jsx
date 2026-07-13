@@ -28,31 +28,33 @@ function App() {
       });
   }, [city]);
 
+  async function handleCurrentLocation() {
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        try {
+          const data = await getCurrentWeatherByCoords(
+            position.coords.latitude,
+            position.coords.longitude,
+          );
+
+          setWeather(data);
+          setCity(data.city);
+          setQuery(data.city);
+        } catch (error) {
+          console.error(error);
+        }
+      },
+      (error) => {
+        console.error(error);
+      },
+    );
+  }
+
   if (!weather) {
     return (
       <div className="app">
         <Loader />
       </div>
-    );
-  }
-
-  function handleCurrentLocation() {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        getCurrentWeatherByCoords(
-          position.coords.latitude,
-          position.coords.longitude,
-        )
-          .then((data) => {
-            setWeather(data);
-            setCity(data.city);
-            setQuery(data.city);
-          })
-          .catch(console.error);
-      },
-      (error) => {
-        console.error(error);
-      },
     );
   }
 
