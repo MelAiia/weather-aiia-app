@@ -2,7 +2,7 @@ import "./App.css";
 
 import { useEffect, useState } from "react";
 import { getCurrentWeather } from "./services/weatherApi";
-
+import Loader from "./components/Loader/Loader";
 import Header from "./components/Header/Header";
 import SearchForm from "./components/SearchForm/SearchForm";
 import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
@@ -26,7 +26,11 @@ function App() {
   }, [city]);
 
   if (!weather) {
-    return <div className="app">Loading weather...</div>;
+    return (
+      <div className="app">
+        <Loader />
+      </div>
+    );
   }
 
   return (
