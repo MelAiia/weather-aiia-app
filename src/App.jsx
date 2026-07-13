@@ -1,7 +1,7 @@
 import "./App.css";
 
 import { useEffect, useState } from "react";
-import { getCurrentWeather } from "../../services/weatherApi";
+import { getCurrentWeather } from "./services/weatherApi";
 
 import Header from "./components/Header/Header";
 import SearchForm from "./components/SearchForm/SearchForm";
