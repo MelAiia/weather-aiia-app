@@ -34,7 +34,7 @@ function App() {
       <div className="weather-card">
         <Header />
 
-        <SearchForm />
+        <SearchForm query={query} setQuery={setQuery} setCity={setCity} />
 
         <main className="weather-layout">
           <section className="main-column">
