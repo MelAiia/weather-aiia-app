@@ -12,6 +12,7 @@ import Forecast from "./components/Forecast/Forecast";
 
 function App() {
   const [city, setCity] = useState("Kyiv");
+  const [query, setQuery] = useState("Kyiv");
   const [weather, setWeather] = useState(null);
 
   useEffect(() => {
