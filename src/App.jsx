@@ -37,11 +37,11 @@ function App() {
 
         <main className="weather-layout">
           <section className="main-column">
-            <CurrentWeather />
+            <CurrentWeather weather={weather} />
           </section>
 
           <aside className="side-column">
-            <WeatherSidebar />
+            <WeatherSidebar weather={weather} />
           </aside>
         </main>
 

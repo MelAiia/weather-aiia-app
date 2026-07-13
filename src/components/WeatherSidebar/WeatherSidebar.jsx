@@ -2,25 +2,25 @@ import "./WeatherSidebar.css";
 import { WiHumidity, WiStrongWind, WiDaySunny } from "react-icons/wi";
 import { MdVisibility } from "react-icons/md";
 
-function WeatherSidebar() {
+function WeatherSidebar({ weather }) {
   return (
     <aside className="weather-sidebar">
       <div className="info-card">
         <WiHumidity />
         <span>Humidity</span>
-        <strong>74%</strong>
+        <strong>{weather.humidity}%</strong>
       </div>
 
       <div className="info-card">
         <WiStrongWind />
         <span>Wind</span>
-        <strong>12 km/h</strong>
+        <strong>{weather.wind} km/h</strong>
       </div>
 
       <div className="info-card">
         <MdVisibility />
         <span>Visibility</span>
-        <strong>10 km</strong>
+        <strong>{weather.visibility} km</strong>
       </div>
 
       <div className="info-card">
