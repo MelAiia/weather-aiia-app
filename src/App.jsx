@@ -1,7 +1,10 @@
 import "./App.css";
 
 import { useEffect, useState } from "react";
-import { getCurrentWeather } from "./services/weatherApi";
+import {
+  getCurrentWeather,
+  getCurrentWeatherByCoords,
+} from "./services/weatherApi";
 import Loader from "./components/Loader/Loader";
 import Header from "./components/Header/Header";
 import SearchForm from "./components/SearchForm/SearchForm";
@@ -33,12 +36,37 @@ function App() {
     );
   }
 
+  function handleCurrentLocation() {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        getCurrentWeatherByCoords(
+          position.coords.latitude,
+          position.coords.longitude,
+        )
+          .then((data) => {
+            setWeather(data);
+            setCity(data.city);
+            setQuery(data.city);
+          })
+          .catch(console.error);
+      },
+      (error) => {
+        console.error(error);
+      },
+    );
+  }
+
   return (
     <div className="app theme-clear">
       <div className="weather-card">
         <Header />
 
-        <SearchForm query={query} setQuery={setQuery} setCity={setCity} />
+        <SearchForm
+          query={query}
+          setQuery={setQuery}
+          setCity={setCity}
+          onCurrentLocation={handleCurrentLocation}
+        />
 
         <main className="weather-layout">
           <section className="main-column">

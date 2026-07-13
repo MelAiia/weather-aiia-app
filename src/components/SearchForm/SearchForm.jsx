@@ -2,7 +2,7 @@ import "./SearchForm.css";
 import { FiSearch } from "react-icons/fi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 
-function SearchForm({ query, setQuery, setCity }) {
+function SearchForm({ query, setQuery, setCity, onCurrentLocation }) {
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -23,7 +23,11 @@ function SearchForm({ query, setQuery, setCity }) {
         />
       </div>
 
-      <button type="button" className="location-button">
+      <button
+        type="button"
+        className="location-button"
+        onClick={onCurrentLocation}
+      >
         <HiOutlineLocationMarker />
       </button>
     </form>
