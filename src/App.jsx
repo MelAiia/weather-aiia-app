@@ -29,6 +29,8 @@ function App() {
       .then((data) => {
         setWeather(data);
 
+        setError("");
+
         getForecast(city)
           .then((forecastData) => {
             setForecast(forecastData);
@@ -37,9 +39,8 @@ function App() {
       })
       .catch((error) => {
         console.error(error);
-        setWeather(null);
-        setForecast([]);
-        setError("City not found");
+
+        setError(`"${query}" was not found.`);
       });
   }, [city]);
 
@@ -65,14 +66,6 @@ function App() {
     );
   }
 
-  if (error) {
-    return (
-      <div className="app">
-        <div className="error-message">{error}</div>
-      </div>
-    );
-  }
-
   if (!weather) {
     return (
       <div className="app">
@@ -92,6 +85,7 @@ function App() {
           setCity={setCity}
           onCurrentLocation={handleCurrentLocation}
         />
+        {error && <div className="search-error">❌ {error}</div>}
 
         <main className="weather-layout">
           <section className="main-column">
