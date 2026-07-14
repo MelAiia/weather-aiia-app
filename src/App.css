@@ -71,7 +71,7 @@ body {
 
   border-radius: var(--radius-lg);
 
-  background: var(--bg-card);
+  background: rgba(20, 30, 45, 0.35);
 
   border: 1px solid var(--border-color);
 
@@ -87,7 +87,7 @@ body {
 
   gap: 28px;
 
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .main-column,

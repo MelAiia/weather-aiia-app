@@ -17,6 +17,7 @@ import {
 
 import { getWeatherTheme } from "./utils/weatherTheme";
 import { getWeatherPhoto } from "./services/pexelsApi";
+import { getBackgroundQuery } from "./utils/weatherBackground";
 // import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -35,7 +36,9 @@ function App() {
 
         setError("");
 
-        getWeatherPhoto("rain")
+        const query = getBackgroundQuery(data.icon);
+
+        getWeatherPhoto(query)
           .then((photo) => {
             setBackground(photo);
           })
