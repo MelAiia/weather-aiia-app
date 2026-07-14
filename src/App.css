@@ -24,42 +24,44 @@ body {
 
   padding: 40px;
 
-  background: var(--bg-primary);
+  background: transparent;
 
   position: relative;
   z-index: 1;
+
+  transition: all 0.8s ease;
 }
 
 .theme-clear {
-  background: linear-gradient(180deg, #3d8bfd, #71b8ff, #d9efff);
+  background: transparent;
 }
 
 .theme-clouds {
-  background: linear-gradient(180deg, #667085, #9aa6b2, #d7dde3);
+  background: transparent;
 }
 
 .theme-rain {
-  background: linear-gradient(180deg, #23344d, #445b78, #71839b);
+  background: transparent;
 }
 
 .theme-storm {
-  background: linear-gradient(180deg, #1d2233, #323b59, #55607e);
+  background: transparent;
 }
 
 .theme-snow {
-  background: linear-gradient(180deg, #dce8f3, #f4f8fc, #ffffff);
+  background: transparent;
 }
 
 .theme-fog {
-  background: linear-gradient(180deg, #9ca8b3, #bfc8d1, #dce2e8);
+  background: transparent;
 }
 
 .theme-night-clear {
-  background: linear-gradient(180deg, #071421, #10253d, #193a5d);
+  background: transparent;
 }
 
 .theme-night-clouds {
-  background: linear-gradient(180deg, #111827, #293548, #46576e);
+  background: transparent;
 }
 
 .weather-card {

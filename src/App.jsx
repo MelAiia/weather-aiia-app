@@ -41,6 +41,7 @@ function App() {
         getWeatherPhoto(query)
           .then((photo) => {
             setBackground(photo);
+            console.log("Photo:", photo);
           })
           .catch(console.error);
 

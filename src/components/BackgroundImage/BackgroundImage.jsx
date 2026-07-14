@@ -3,7 +3,8 @@ import "./BackgroundImage.css";
 function BackgroundImage({ image }) {
   return (
     <div
-      className="background-image"
+      key={image}
+      className="background-image fade"
       style={{
         backgroundImage: `url(${image})`,
       }}
