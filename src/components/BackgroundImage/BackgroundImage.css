@@ -1,0 +1,25 @@
+.background-image {
+  position: fixed;
+
+  inset: 0;
+
+  background-size: cover;
+
+  background-position: center;
+
+  z-index: -2;
+
+  transition: background-image 0.8s ease;
+}
+
+.background-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(5, 10, 20, 0.55);
+
+  backdrop-filter: blur(8px);
+}
