@@ -25,6 +25,9 @@ body {
   padding: 40px;
 
   background: var(--bg-primary);
+
+  position: relative;
+  z-index: 1;
 }
 
 .theme-clear {

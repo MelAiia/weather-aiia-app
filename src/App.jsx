@@ -1,7 +1,7 @@
 import "./App.css";
 
 import { useEffect, useState } from "react";
-
+import BackgroundImage from "./components/BackgroundImage/BackgroundImage";
 import Loader from "./components/Loader/Loader";
 import Header from "./components/Header/Header";
 import SearchForm from "./components/SearchForm/SearchForm";
@@ -24,6 +24,7 @@ function App() {
   const [query, setQuery] = useState("Kyiv");
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState([]);
+  const [background, setBackground] = useState("");
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -34,9 +35,11 @@ function App() {
 
         setError("");
 
-        getWeatherPhoto("rain").then((photo) => {
-          console.log(photo);
-        });
+        getWeatherPhoto("rain")
+          .then((photo) => {
+            setBackground(photo);
+          })
+          .catch(console.error);
 
         getForecast(city)
           .then((forecastData) => {
@@ -84,33 +87,36 @@ function App() {
   const theme = getWeatherTheme(weather.icon);
 
   return (
-    <div className={`app theme-${theme}`}>
-      <div className="weather-card">
-        <Header />
+    <>
+      <BackgroundImage image={background} />
+      <div className={`app theme-${theme}`}>
+        <div className="weather-card">
+          <Header />
 
-        <SearchForm
-          query={query}
-          setQuery={setQuery}
-          setCity={setCity}
-          onCurrentLocation={handleCurrentLocation}
-        />
-        {error && <div className="search-error">❌ {error}</div>}
+          <SearchForm
+            query={query}
+            setQuery={setQuery}
+            setCity={setCity}
+            onCurrentLocation={handleCurrentLocation}
+          />
+          {error && <div className="search-error">❌ {error}</div>}
 
-        <main className="weather-layout">
-          <section className="main-column">
-            <CurrentWeather weather={weather} />
-          </section>
+          <main className="weather-layout">
+            <section className="main-column">
+              <CurrentWeather weather={weather} />
+            </section>
 
-          <aside className="side-column">
-            <WeatherSidebar weather={weather} />
-          </aside>
-        </main>
+            <aside className="side-column">
+              <WeatherSidebar weather={weather} />
+            </aside>
+          </main>
 
-        <Forecast forecast={forecast} />
+          <Forecast forecast={forecast} />
 
-        {/* <Footer /> */}
+          {/* <Footer /> */}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
