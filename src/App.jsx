@@ -20,6 +20,7 @@ function App() {
   const [city, setCity] = useState("Kyiv");
   const [query, setQuery] = useState("Kyiv");
   const [weather, setWeather] = useState(null);
+  const [forecast, setForecast] = useState([]);
 
   useEffect(() => {
     getCurrentWeather(city)
@@ -27,12 +28,10 @@ function App() {
         setWeather(data);
 
         getForecast(city)
-          .then((forecast) => {
-            console.log("Forecast:", forecast);
+          .then((forecastData) => {
+            setForecast(forecastData);
           })
-          .catch((error) => {
-            console.error(error);
-          });
+          .catch(console.error);
       })
       .catch((error) => {
         console.error(error);
@@ -91,7 +90,7 @@ function App() {
           </aside>
         </main>
 
-        <Forecast />
+        <Forecast forecast={forecast} />
 
         {/* <Footer /> */}
       </div>
