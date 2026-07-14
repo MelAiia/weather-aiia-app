@@ -1,16 +1,19 @@
 import "./App.css";
 
 import { useEffect, useState } from "react";
-import {
-  getCurrentWeather,
-  getCurrentWeatherByCoords,
-} from "./services/weatherApi";
+
 import Loader from "./components/Loader/Loader";
 import Header from "./components/Header/Header";
 import SearchForm from "./components/SearchForm/SearchForm";
 import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
 import WeatherSidebar from "./components/WeatherSidebar/WeatherSidebar";
 import Forecast from "./components/Forecast/Forecast";
+
+import {
+  getCurrentWeather,
+  getCurrentWeatherByCoords,
+  getForecast,
+} from "./services/weatherApi";
 // import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -22,6 +25,14 @@ function App() {
     getCurrentWeather(city)
       .then((data) => {
         setWeather(data);
+
+        getForecast(city)
+          .then((forecast) => {
+            console.log("Forecast:", forecast);
+          })
+          .catch((error) => {
+            console.error(error);
+          });
       })
       .catch((error) => {
         console.error(error);

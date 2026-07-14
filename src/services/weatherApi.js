@@ -48,3 +48,15 @@ export async function getCurrentWeatherByCoords(lat, lon) {
 
   return transformCurrentWeather(data);
 }
+
+export async function getForecast(city) {
+  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`;
+
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error(`Forecast API Error: ${response.status}`);
+  }
+
+  return await response.json();
+}
