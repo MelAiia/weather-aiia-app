@@ -14,6 +14,8 @@ import {
   getCurrentWeatherByCoords,
   getForecast,
 } from "./services/weatherApi";
+
+import { getWeatherTheme } from "./utils/weatherTheme";
 // import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -74,8 +76,10 @@ function App() {
     );
   }
 
+  const theme = getWeatherTheme(weather.icon);
+
   return (
-    <div className="app theme-clear">
+    <div className={`app theme-${theme}`}>
       <div className="weather-card">
         <Header />
 
