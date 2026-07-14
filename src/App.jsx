@@ -16,6 +16,7 @@ import {
 } from "./services/weatherApi";
 
 import { getWeatherTheme } from "./utils/weatherTheme";
+import { getWeatherPhoto } from "./services/pexelsApi";
 // import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -32,6 +33,10 @@ function App() {
         setWeather(data);
 
         setError("");
+
+        getWeatherPhoto("rain").then((photo) => {
+          console.log(photo);
+        });
 
         getForecast(city)
           .then((forecastData) => {
