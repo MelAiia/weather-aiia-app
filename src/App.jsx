@@ -21,8 +21,10 @@ function App() {
   const [query, setQuery] = useState("Kyiv");
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState([]);
+  const [error, setError] = useState("");
 
   useEffect(() => {
+    setError("");
     getCurrentWeather(city)
       .then((data) => {
         setWeather(data);
@@ -35,6 +37,9 @@ function App() {
       })
       .catch((error) => {
         console.error(error);
+        setWeather(null);
+        setForecast([]);
+        setError("City not found");
       });
   }, [city]);
 
@@ -57,6 +62,14 @@ function App() {
       (error) => {
         console.error(error);
       },
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="app">
+        <div className="error-message">{error}</div>
+      </div>
     );
   }
 
