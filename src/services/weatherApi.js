@@ -21,6 +21,22 @@ function transformCurrentWeather(data) {
   };
 }
 
+function transformForecast(data) {
+  return data.list
+    .filter((item) => item.dt_txt.includes("12:00:00"))
+    .map((item) => ({
+      day: new Date(item.dt * 1000).toLocaleDateString("en-US", {
+        weekday: "short",
+      }),
+
+      max: Math.round(item.main.temp_max),
+
+      min: Math.round(item.main.temp_min),
+
+      code: item.weather[0].icon,
+    }));
+}
+
 export async function getCurrentWeather(city) {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
 
@@ -58,5 +74,7 @@ export async function getForecast(city) {
     throw new Error(`Forecast API Error: ${response.status}`);
   }
 
-  return await response.json();
+  const data = await response.json();
+
+  return transformForecast(data);
 }
