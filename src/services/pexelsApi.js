@@ -15,5 +15,8 @@ export async function getWeatherPhoto(query) {
 
   const data = await response.json();
 
-  return data.photos[0]?.src?.large2x;
+  return (
+    data.photos[0]?.src?.large2x ||
+    "https://images.pexels.com/photos/531756/pexels-photo-531756.jpeg"
+  );
 }
