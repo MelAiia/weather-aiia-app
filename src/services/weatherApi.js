@@ -1,4 +1,4 @@
-const API_KEY = "b8b67cb3f8cf5acd33fb9252b6fc489f";
+const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
 function transformCurrentWeather(data) {
   return {
@@ -16,8 +16,13 @@ function transformCurrentWeather(data) {
 
     visibility: Math.round(data.visibility / 1000),
 
+    precipitation: data.rain?.["1h"] ?? data.rain?.["3h"] ?? 0,
+
     sunrise: data.sys.sunrise,
     sunset: data.sys.sunset,
+
+    lat: data.coord.lat,
+    lon: data.coord.lon,
   };
 }
 
