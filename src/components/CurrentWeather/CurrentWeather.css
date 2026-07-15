@@ -1,13 +1,13 @@
 .current-weather {
   min-height: 360px;
 
-  padding: 36px;
+  padding: 38px;
 
   border-radius: var(--radius-md);
 
   background: var(--card);
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-color);
 
   display: flex;
   flex-direction: column;
@@ -25,83 +25,39 @@
 
   color: white;
 
-  font-size: 34px;
+  font-size: 36px;
 
   font-weight: 700;
+
+  line-height: 1.2;
 }
 
 .date {
-  margin: 0;
-
   color: var(--text-secondary);
 
   font-size: 15px;
 }
 
 .description {
-  margin: 0;
-
   color: var(--accent);
 
-  font-size: 18px;
+  font-size: 22px;
+
+  text-transform: capitalize;
 
   font-weight: 600;
-
-  letter-spacing: 0.5px;
-}
-
-.weather-body {
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: flex-start;
-
-  margin: 20px 0;
-}
-
-.temperature-block {
-  display: flex;
-
-  flex-direction: column;
 }
 
 .temperature {
   margin: 0;
 
-  font-size: 90px;
+  font-size: 110px;
+
+  line-height: 0.9;
+
+  color: white;
 
   font-weight: 700;
-
-  line-height: 1;
-
-  color: white;
-}
-
-.feels-like {
-  margin-top: 10px;
-
-  color: var(--text-secondary);
-
-  font-size: 15px;
-}
-
-.feels-like strong {
-  color: white;
-}
-
-.weather-footer {
-  display: flex;
-
-  justify-content: flex-end;
-}
-
-.weather-footer p {
-  margin: 0;
-
-  font-size: 14px;
-
-  color: var(--text-secondary);
 }
 
 .loading {
@@ -109,4 +65,82 @@
   font-size: 20px;
   text-align: center;
   margin: auto;
+}
+
+.weather-content {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 40px;
+
+  flex: 1;
+}
+
+.weather-left {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+
+  flex: 1;
+}
+
+.weather-stats {
+  display: flex;
+
+  gap: 32px;
+
+  margin-top: 8px;
+
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.stat-item span {
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+.stat-item strong {
+  color: white;
+
+  font-size: 22px;
+
+  font-weight: 700;
+}
+
+.weather-right {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  min-width: 220px;
+}
+
+.weather-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: 20px;
+}
+
+.weather-footer p {
+  color: var(--text-secondary);
+
+  font-size: 14px;
 }
