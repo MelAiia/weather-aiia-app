@@ -12,7 +12,8 @@
 
   border-radius: 18px;
 
-  padding: 18px;
+  padding: 22px;
+  min-height: 150px;
 
   display: flex;
   flex-direction: column;
@@ -30,23 +31,35 @@
 
   background: var(--card-hover);
 }
-
-.info-card svg {
-  font-size: 28px;
-
+.info-icon {
+  font-size: 30px;
   color: var(--accent);
+
+  margin-bottom: 8px;
 }
 
-.info-card span {
+.info-label {
   color: var(--text-secondary);
 
   font-size: 14px;
+
+  font-weight: 500;
 }
 
-.info-card strong {
+.info-value {
   color: white;
 
-  font-size: 26px;
+  font-size: 34px;
 
   font-weight: 700;
+
+  line-height: 1.1;
+}
+
+.info-description {
+  color: var(--text-light);
+
+  font-size: 13px;
+
+  margin-top: auto;
 }
