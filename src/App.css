@@ -101,17 +101,20 @@ body {
 .weather-layout {
   display: grid;
 
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: minmax(0, 2fr) 340px;
 
-  gap: 28px;
+  align-items: stretch;
 
-  margin-bottom: 16px;
+  gap: 24px;
+
+  margin-bottom: 24px;
 }
 
 .main-column,
 .side-column {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .error-message {

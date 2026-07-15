@@ -1,4 +1,5 @@
 .current-weather {
+  height: 100%;
   min-height: 360px;
 
   padding: 38px;
@@ -106,7 +107,7 @@
 
   border-radius: var(--radius-sm);
 
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--card);
 
   border: 1px solid rgba(255, 255, 255, 0.06);
 
@@ -148,11 +149,15 @@
 .weather-right {
   display: flex;
 
-  justify-content: center;
-
   align-items: center;
 
-  min-width: 220px;
+  justify-content: center;
+
+  align-self: center;
+}
+
+.weather-icon {
+  transform: translateY(20px);
 }
 
 .weather-footer {

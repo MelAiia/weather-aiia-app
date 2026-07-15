@@ -31,7 +31,7 @@ function CurrentWeather({ weather }) {
           <div className="weather-stats">
             <div className="stat-item">
               <WiThermometer className="stat-icon" />
-              <span>Feels like</span>
+              <span>Feels Like</span>
               <strong>{weather.feelsLike}°</strong>
             </div>
 
