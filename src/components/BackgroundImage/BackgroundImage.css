@@ -17,9 +17,12 @@
   position: absolute;
   inset: 0;
 
-  background: rgba(8, 15, 30, 0.28);
-
-  backdrop-filter: blur(2px);
+  background: linear-gradient(
+    180deg,
+    rgba(9, 17, 31, 0.18) 0%,
+    rgba(9, 17, 31, 0.38) 45%,
+    rgba(9, 17, 31, 0.55) 100%
+  );
 }
 
 @keyframes backgroundFade {

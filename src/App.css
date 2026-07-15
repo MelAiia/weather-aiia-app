@@ -1,12 +1,24 @@
 :root {
   --background: #09111f;
-  --card: rgba(255, 255, 255, 0.08);
-  --border: rgba(255, 255, 255, 0.12);
+
+  --card: rgba(255, 255, 255, 0.06);
+  --card-hover: rgba(255, 255, 255, 0.09);
+
+  --border-color: rgba(255, 255, 255, 0.12);
 
   --text: #ffffff;
   --text-light: rgba(255, 255, 255, 0.75);
+  --text-secondary: rgba(255, 255, 255, 0.62);
 
   --accent: #82cfff;
+
+  --radius-sm: 18px;
+  --radius-md: 24px;
+  --radius-lg: 30px;
+
+  --shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+
+  --transition: 0.3s ease;
 }
 
 body {
@@ -73,13 +85,17 @@ body {
 
   border-radius: var(--radius-lg);
 
-  background: rgba(20, 30, 45, 0.35);
+  background: rgba(20, 30, 45, 0.28);
 
   border: 1px solid var(--border-color);
 
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
 
   box-shadow: var(--shadow);
+
+  overflow: hidden;
 }
 
 .weather-layout {
