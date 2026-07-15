@@ -100,25 +100,49 @@
 }
 
 .stat-item {
+  min-width: 110px;
+
+  padding: 16px;
+
+  border-radius: var(--radius-sm);
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
   display: flex;
 
   flex-direction: column;
 
-  gap: 6px;
+  gap: 8px;
+
+  transition: var(--transition);
+}
+
+.stat-item:hover {
+  transform: translateY(-3px);
+
+  background: var(--card-hover);
+
+  border-color: rgba(130, 207, 255, 0.25);
 }
 
 .stat-item span {
   color: var(--text-secondary);
 
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .stat-item strong {
   color: white;
 
   font-size: 22px;
+}
 
-  font-weight: 700;
+.stat-icon {
+  font-size: 24px;
+
+  color: var(--accent);
 }
 
 .weather-right {
