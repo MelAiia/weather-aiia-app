@@ -162,14 +162,21 @@
 
 .weather-footer {
   display: flex;
-
   justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
 
-  margin-top: 20px;
+  margin-top: 22px;
+
+  color: var(--text-secondary);
+}
+
+.weather-footer svg {
+  font-size: 18px;
+  color: var(--accent);
 }
 
 .weather-footer p {
-  color: var(--text-secondary);
-
+  margin: 0;
   font-size: 14px;
 }

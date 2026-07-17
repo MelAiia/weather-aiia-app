@@ -1,7 +1,12 @@
 import "./CurrentWeather.css";
 import WeatherIcon from "../WeatherIcon/WeatherIcon";
 
-import { WiThermometer, WiStrongWind, WiHumidity } from "react-icons/wi";
+import {
+  WiThermometer,
+  WiStrongWind,
+  WiHumidity,
+  WiTime3,
+} from "react-icons/wi";
 
 function CurrentWeather({ weather }) {
   if (!weather) {
@@ -25,6 +30,30 @@ function CurrentWeather({ weather }) {
     });
 
     return `${weekday} • ${dayMonth}`;
+  }
+
+  function formatUpdated(timestamp) {
+    const now = Date.now();
+
+    const updated = timestamp * 1000;
+
+    const minutes = Math.floor((now - updated) / 60000);
+
+    if (minutes <= 0) {
+      return "Updated just now";
+    }
+
+    if (minutes === 1) {
+      return "Updated 1 min ago";
+    }
+
+    if (minutes < 60) {
+      return `Updated ${minutes} min ago`;
+    }
+
+    const hours = Math.floor(minutes / 60);
+
+    return `Updated ${hours}h ago`;
   }
 
   return (
@@ -70,7 +99,8 @@ function CurrentWeather({ weather }) {
       </div>
 
       <div className="weather-footer">
-        <p>Updated just now</p>
+        <WiTime3 />
+        <p>{formatUpdated(weather.date)}</p>
       </div>
     </section>
   );
