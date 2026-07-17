@@ -41,7 +41,7 @@ function WeatherSidebar({ weather }) {
 
         <strong className="info-value">{formatTime(weather.sunrise)}</strong>
 
-        <span className="info-description">Sunrise</span>
+        <span className="info-description">First Light</span>
       </div>
 
       <div className="info-card">
@@ -59,7 +59,7 @@ function WeatherSidebar({ weather }) {
 
         <span className="info-label">Precipitation</span>
 
-        <strong className="info-value"> {weather.precipitation} mm</strong>
+        <strong className="info-value"> {weather.precipitation} mm </strong>
 
         <span className="info-description">
           {getPrecipitationDescription(weather.precipitation)}

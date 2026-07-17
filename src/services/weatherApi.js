@@ -83,3 +83,17 @@ export async function getForecast(city) {
 
   return transformForecast(data);
 }
+
+export async function getAirQuality(lat, lon) {
+  const url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
+
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error("Air Quality API Error");
+  }
+
+  const data = await response.json();
+
+  return data.list[0].main.aqi;
+}

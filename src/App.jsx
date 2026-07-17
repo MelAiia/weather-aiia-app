@@ -13,6 +13,7 @@ import {
   getCurrentWeather,
   getCurrentWeatherByCoords,
   getForecast,
+  getAirQuality,
 } from "./services/weatherApi";
 
 import { getWeatherTheme } from "./utils/weatherTheme";
@@ -25,6 +26,7 @@ function App() {
   const [query, setQuery] = useState("Kyiv");
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState([]);
+  const [airQuality, setAirQuality] = useState(null);
   const [background, setBackground] = useState("");
   const [error, setError] = useState("");
 
@@ -33,6 +35,10 @@ function App() {
     getCurrentWeather(city)
       .then((data) => {
         setWeather(data);
+
+        getAirQuality(data.lat, data.lon)
+          .then(setAirQuality)
+          .catch(console.error);
 
         setError("");
 
@@ -111,7 +117,7 @@ function App() {
             </section>
 
             <aside className="side-column">
-              <WeatherSidebar weather={weather} />
+              <WeatherSidebar weather={weather} airQuality={airQuality} />
             </aside>
           </main>
 
