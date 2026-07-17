@@ -86,20 +86,6 @@ function WeatherSidebar({ weather, airQuality }) {
         <span className="info-description" style={{ color: air.color }}>
           AQI • {airQuality} / 5
         </span>
-
-        <div className="air-bar">
-          <div
-            className="air-bar-fill"
-            style={{
-              width: `${airQuality * 20}%`,
-              background: air.color,
-            }}
-          ></div>
-        </div>
-
-        <span className="info-description" style={{ color: air.color }}>
-          AQI {airQuality}
-        </span>
       </div>
 
       <div className="info-card">
