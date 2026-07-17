@@ -21,17 +21,60 @@ function getPrecipitationDescription(value) {
   return "Heavy rain";
 }
 
-function WeatherSidebar({ weather }) {
+function getAirQuality(aqi) {
+  switch (aqi) {
+    case 1:
+      return {
+        text: "Excellent",
+        color: "#38d39f",
+      };
+
+    case 2:
+      return {
+        text: "Good",
+        color: "#8ddf5a",
+      };
+
+    case 3:
+      return {
+        text: "Moderate",
+        color: "#ffd166",
+      };
+
+    case 4:
+      return {
+        text: "Poor",
+        color: "#ff8c42",
+      };
+
+    case 5:
+      return {
+        text: "Very Poor",
+        color: "#ff4d6d",
+      };
+
+    default:
+      return {
+        text: "--",
+        color: "#ffffff",
+      };
+  }
+}
+
+function WeatherSidebar({ weather, airQuality }) {
+  const air = getAirQuality(airQuality);
   return (
     <aside className="weather-sidebar">
       <div className="info-card">
-        <WiDaySunny className="info-icon" />
+        <WiDaySunny className="info-icon" style={{ color: air.color }} />
 
-        <span className="info-label">UV Index</span>
+        <span className="info-label">Air Quality</span>
 
-        <strong className="info-value">5</strong>
+        <strong className="info-value">{air.text}</strong>
 
-        <span className="info-description">Moderate</span>
+        <span className="info-description" style={{ color: air.color }}>
+          AQI {airQuality}
+        </span>
       </div>
 
       <div className="info-card">
