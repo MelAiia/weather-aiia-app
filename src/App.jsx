@@ -14,7 +14,7 @@ import {
   getCurrentWeatherByCoords,
   getForecast,
   getAirQuality,
-  getOneCall,
+  getUvIndex,
 } from "./services/weatherApi";
 
 import { getWeatherTheme } from "./utils/weatherTheme";
@@ -42,11 +42,7 @@ function App() {
           .then(setAirQuality)
           .catch(console.error);
 
-        getOneCall(data.lat, data.lon)
-          .then((data) => {
-            setUvIndex(data.current.uvi);
-          })
-          .catch(console.error);
+        getUvIndex(data.lat, data.lon).then(setUvIndex).catch(console.error);
 
         setError("");
 

@@ -22,6 +22,37 @@ function getPrecipitationDescription(value) {
   return "Heavy rain";
 }
 
+function getUvDescription(uvi) {
+  if (uvi < 3)
+    return {
+      text: "Low",
+      color: "#38d39f",
+    };
+
+  if (uvi < 6)
+    return {
+      text: "Moderate",
+      color: "#ffd166",
+    };
+
+  if (uvi < 8)
+    return {
+      text: "High",
+      color: "#ff8c42",
+    };
+
+  if (uvi < 11)
+    return {
+      text: "Very High",
+      color: "#ff4d6d",
+    };
+
+  return {
+    text: "Extreme",
+    color: "#c2185b",
+  };
+}
+
 function getAirQuality(aqi) {
   switch (aqi) {
     case 1:
@@ -60,37 +91,6 @@ function getAirQuality(aqi) {
         color: "#ffffff",
       };
   }
-}
-
-function getUvDescription(uvi) {
-  if (uvi <= 2)
-    return {
-      text: "Low",
-      color: "#38d39f",
-    };
-
-  if (uvi <= 5)
-    return {
-      text: "Moderate",
-      color: "#ffd166",
-    };
-
-  if (uvi <= 7)
-    return {
-      text: "High",
-      color: "#ff8c42",
-    };
-
-  if (uvi <= 10)
-    return {
-      text: "Very High",
-      color: "#ff4d6d",
-    };
-
-  return {
-    text: "Extreme",
-    color: "#c2185b",
-  };
 }
 
 function WeatherSidebar({ weather, airQuality, uvIndex }) {
@@ -152,15 +152,17 @@ function WeatherSidebar({ weather, airQuality, uvIndex }) {
         </span>
       </div>
 
-      <WiDaySunny className="info-icon" style={{ color: uv.color }} />
+      <div className="info-card">
+        <WiDaySunny className="info-icon" style={{ color: uv.color }} />
 
-      <span className="info-label">UV Index</span>
+        <span className="info-label">UV Index</span>
 
-      <strong className="info-value">{uvIndex ?? "--"}</strong>
+        <strong className="info-value">{uvIndex ?? "--"}</strong>
 
-      <span className="info-description" style={{ color: uv.color }}>
-        {uv.text}
-      </span>
+        <span className="info-description" style={{ color: uv.color }}>
+          {uv.text}
+        </span>
+      </div>
     </aside>
   );
 }

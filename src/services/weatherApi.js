@@ -98,14 +98,20 @@ export async function getAirQuality(lat, lon) {
   return data.list[0].main.aqi;
 }
 
-export async function getOneCall(lat, lon) {
-  const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,daily,alerts&appid=${API_KEY}&units=metric`;
+export async function getUvIndex(lat, lon) {
+  const url =
+    `https://api.open-meteo.com/v1/forecast` +
+    `?latitude=${lat}` +
+    `&longitude=${lon}` +
+    `&current=uv_index`;
 
   const response = await fetch(url);
 
   if (!response.ok) {
-    throw new Error("One Call API Error");
+    throw new Error("UV API Error");
   }
 
-  return await response.json();
+  const data = await response.json();
+
+  return data.current.uv_index;
 }
