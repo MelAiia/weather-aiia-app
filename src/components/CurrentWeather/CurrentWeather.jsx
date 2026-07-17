@@ -12,6 +12,21 @@ function CurrentWeather({ weather }) {
     );
   }
 
+  function formatDate(timestamp) {
+    const date = new Date(timestamp * 1000);
+
+    const weekday = date.toLocaleDateString("en-GB", {
+      weekday: "long",
+    });
+
+    const dayMonth = date.toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "long",
+    });
+
+    return `${weekday} • ${dayMonth}`;
+  }
+
   return (
     <section className="current-weather">
       <div className="weather-header">
@@ -19,7 +34,7 @@ function CurrentWeather({ weather }) {
           {weather.city}, {weather.country}
         </h1>
 
-        <p className="date">Friday • 10 July 2026</p>
+        <p className="date">{formatDate(weather.date)}</p>
       </div>
 
       <div className="weather-content">

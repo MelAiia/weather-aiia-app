@@ -21,6 +21,8 @@ function transformCurrentWeather(data) {
     sunrise: data.sys.sunrise,
     sunset: data.sys.sunset,
 
+    date: data.dt,
+
     lat: data.coord.lat,
     lon: data.coord.lon,
   };
