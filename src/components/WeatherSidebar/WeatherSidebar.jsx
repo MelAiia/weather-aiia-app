@@ -1,6 +1,7 @@
 import "./WeatherSidebar.css";
 
 import { WiDaySunny, WiSunrise, WiSunset, WiRain } from "react-icons/wi";
+import { MdAir } from "react-icons/md";
 
 function formatTime(timestamp) {
   return new Date(timestamp * 1000).toLocaleTimeString([], {
@@ -66,11 +67,25 @@ function WeatherSidebar({ weather, airQuality }) {
   return (
     <aside className="weather-sidebar">
       <div className="info-card">
-        <WiDaySunny className="info-icon" style={{ color: air.color }} />
+        <MdAir className="info-icon" style={{ color: air.color }} />
 
         <span className="info-label">Air Quality</span>
 
         <strong className="info-value">{air.text}</strong>
+
+        <div className="air-progress">
+          <div
+            className="air-progress-fill"
+            style={{
+              width: `${airQuality * 20}%`,
+              background: air.color,
+            }}
+          />
+        </div>
+
+        <span className="info-description" style={{ color: air.color }}>
+          AQI • {airQuality} / 5
+        </span>
 
         <div className="air-bar">
           <div
