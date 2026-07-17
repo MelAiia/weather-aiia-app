@@ -97,3 +97,15 @@ export async function getAirQuality(lat, lon) {
 
   return data.list[0].main.aqi;
 }
+
+export async function getOneCall(lat, lon) {
+  const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,daily,alerts&appid=${API_KEY}&units=metric`;
+
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error("One Call API Error");
+  }
+
+  return await response.json();
+}

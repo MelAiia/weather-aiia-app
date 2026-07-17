@@ -14,6 +14,7 @@ import {
   getCurrentWeatherByCoords,
   getForecast,
   getAirQuality,
+  getOneCall,
 } from "./services/weatherApi";
 
 import { getWeatherTheme } from "./utils/weatherTheme";
@@ -27,6 +28,7 @@ function App() {
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState([]);
   const [airQuality, setAirQuality] = useState(null);
+  const [uvIndex, setUvIndex] = useState(null);
   const [background, setBackground] = useState("");
   const [error, setError] = useState("");
 
@@ -38,6 +40,12 @@ function App() {
 
         getAirQuality(data.lat, data.lon)
           .then(setAirQuality)
+          .catch(console.error);
+
+        getOneCall(data.lat, data.lon)
+          .then((data) => {
+            setUvIndex(data.current.uvi);
+          })
           .catch(console.error);
 
         setError("");
@@ -117,7 +125,11 @@ function App() {
             </section>
 
             <aside className="side-column">
-              <WeatherSidebar weather={weather} airQuality={airQuality} />
+              <WeatherSidebar
+                weather={weather}
+                airQuality={airQuality}
+                uvIndex={uvIndex}
+              />
             </aside>
           </main>
 
