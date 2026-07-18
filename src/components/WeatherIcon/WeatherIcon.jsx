@@ -45,8 +45,37 @@ function WeatherIcon({ code, size = 120 }) {
     "50n": <WiFog size={size} />,
   };
 
+  const iconClasses = {
+    "01d": "sun",
+    "01n": "moon",
+
+    "02d": "cloud",
+    "02n": "cloud",
+
+    "03d": "cloud",
+    "03n": "cloud",
+
+    "04d": "cloud",
+    "04n": "cloud",
+
+    "09d": "rain",
+    "09n": "rain",
+
+    "10d": "rain",
+    "10n": "rain",
+
+    "11d": "storm",
+    "11n": "storm",
+
+    "13d": "snow",
+    "13n": "snow",
+
+    "50d": "fog",
+    "50n": "fog",
+  };
+
   return (
-    <div className="weather-icon">
+    <div className={`weather-icon ${iconClasses[code] || ""}`}>
       {weatherIcons[code] || <WiDaySunny size={size} />}
     </div>
   );
