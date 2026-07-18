@@ -99,4 +99,14 @@
   .weather-sidebar {
     grid-template-columns: 1fr;
   }
+
+  .info-card {
+    min-height: 135px;
+
+    padding: 18px;
+  }
+
+  .info-value {
+    font-size: 28px;
+  }
 }

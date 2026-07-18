@@ -197,4 +197,22 @@
 
     gap: 14px;
   }
+
+  .temperature {
+    font-size: 74px;
+  }
+
+  .city {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 430px) {
+  .weather-stats {
+    grid-template-columns: 1fr;
+  }
 }

@@ -180,3 +180,26 @@ body {
     width: 100%;
   }
 }
+
+@media (max-width: 992px) {
+  .weather-card {
+    padding: 28px;
+  }
+
+  .app {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 14px;
+    align-items: flex-start;
+  }
+
+  .weather-card {
+    padding: 18px;
+    min-height: auto;
+    border-radius: 22px;
+  }
+}
