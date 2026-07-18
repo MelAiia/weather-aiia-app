@@ -87,3 +87,15 @@
     height: 54px;
   }
 }
+
+@media (max-width: 576px) {
+  .search-input-wrapper input {
+    height: 54px;
+
+    font-size: 16px;
+  }
+
+  .location-button {
+    height: 54px;
+  }
+}

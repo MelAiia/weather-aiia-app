@@ -203,3 +203,14 @@ body {
     border-radius: 22px;
   }
 }
+
+@media (max-width: 576px) {
+  .app {
+    padding: 10px;
+  }
+
+  .weather-card {
+    padding: 16px;
+    border-radius: 20px;
+  }
+}

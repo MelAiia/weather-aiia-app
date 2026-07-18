@@ -216,3 +216,29 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 576px) {
+  .city {
+    font-size: 24px;
+  }
+
+  .temperature {
+    font-size: 64px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .weather-content {
+    gap: 20px;
+  }
+
+  .weather-icon {
+    transform: none;
+  }
+
+  .weather-footer {
+    justify-content: center;
+  }
+}

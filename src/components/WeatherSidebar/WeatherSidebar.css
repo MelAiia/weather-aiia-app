@@ -110,3 +110,15 @@
     font-size: 28px;
   }
 }
+
+@media (max-width: 576px) {
+  .info-card {
+    padding: 18px;
+
+    min-height: 130px;
+  }
+
+  .info-value {
+    font-size: 28px;
+  }
+}
