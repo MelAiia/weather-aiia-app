@@ -9,19 +9,99 @@
 
   opacity: 0;
 
-  animation: backgroundFade 0.9s forwards;
+  background-repeat: no-repeat;
+
+  transition:
+    background-image 0.8s ease,
+    transform 8s ease;
+
+  animation:
+    backgroundFade 0.9s forwards,
+    slowZoom 30s linear infinite;
 }
 
-.background-image::after {
+.background-image.clear::after {
   content: "";
   position: absolute;
   inset: 0;
 
   background: linear-gradient(
-    180deg,
-    rgba(9, 17, 31, 0.18) 0%,
-    rgba(9, 17, 31, 0.38) 45%,
-    rgba(9, 17, 31, 0.55) 100%
+    rgba(15, 28, 48, 0.18),
+    rgba(15, 28, 48, 0.38),
+    rgba(15, 28, 48, 0.58)
+  );
+}
+
+.background-image.clouds::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    rgba(22, 32, 46, 0.3),
+    rgba(22, 32, 46, 0.55),
+    rgba(22, 32, 46, 0.72)
+  );
+}
+
+.background-image.rain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    rgba(7, 20, 34, 0.4),
+    rgba(7, 20, 34, 0.65),
+    rgba(7, 20, 34, 0.82)
+  );
+}
+
+.background-image.storm::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    rgba(5, 10, 20, 0.55),
+    rgba(5, 10, 20, 0.75),
+    rgba(5, 10, 20, 0.92)
+  );
+}
+
+.background-image.snow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    rgba(18, 26, 40, 0.32),
+    rgba(18, 26, 40, 0.5),
+    rgba(18, 26, 40, 0.68)
+  );
+}
+
+.background-image.fog::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    rgba(18, 24, 34, 0.38),
+    rgba(18, 24, 34, 0.6),
+    rgba(18, 24, 34, 0.78)
+  );
+}
+
+.background-image.night-clear::after,
+.background-image.night-clouds::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    rgba(5, 8, 20, 0.55),
+    rgba(5, 8, 20, 0.75),
+    rgba(5, 8, 20, 0.92)
   );
 }
 
@@ -34,5 +114,15 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes slowZoom {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.08);
   }
 }

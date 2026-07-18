@@ -102,7 +102,7 @@ function App() {
 
   return (
     <>
-      <BackgroundImage image={background} />
+      <BackgroundImage image={background} theme={theme} />
       <div className={`app theme-${theme}`}>
         <div className="weather-card">
           <Header />
