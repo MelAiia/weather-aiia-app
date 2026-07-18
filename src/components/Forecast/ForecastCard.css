@@ -54,6 +54,14 @@
   opacity: 1;
 }
 
+.forecast-card svg {
+  transition: transform 0.35s ease;
+}
+
+.forecast-card:hover svg {
+  transform: scale(1.12) rotate(-4deg);
+}
+
 .forecast-day {
   margin: 0;
 
@@ -85,7 +93,25 @@
 }
 
 .forecast-temp small {
+  color: var(--accent);
+
   font-size: 17px;
 
-  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+@keyframes forecastFade {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.forecast-card {
+  animation: forecastFade 0.6s ease both;
 }

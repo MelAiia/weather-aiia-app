@@ -1,10 +1,14 @@
 import "./Forecast.css";
 import ForecastCard from "./ForecastCard";
+import { MdOutlineCalendarToday } from "react-icons/md";
 
 function Forecast({ forecast }) {
   return (
     <section className="forecast">
-      <h3 className="forecast-title">5-Day Forecast</h3>
+      <h3 className="forecast-title">
+        <MdOutlineCalendarToday />
+        <span>5-Day Forecast</span>
+      </h3>
 
       <div className="forecast-grid">
         {forecast.map((day) => (

@@ -13,6 +13,12 @@
 }
 
 .forecast-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
   margin: 0 0 26px;
 
   color: white;
@@ -20,8 +26,12 @@
   font-size: 24px;
 
   font-weight: 700;
+}
 
-  letter-spacing: 0.3px;
+.forecast-title svg {
+  color: var(--accent);
+
+  font-size: 24px;
 }
 
 .forecast-grid {
