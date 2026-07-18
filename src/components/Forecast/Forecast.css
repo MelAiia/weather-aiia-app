@@ -1,19 +1,33 @@
 .forecast {
-  padding: 28px;
+  margin-top: 26px;
+
+  padding: 30px;
+
   border-radius: var(--radius-md);
+
   background: var(--card);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border: 1px solid var(--border-color);
+
+  backdrop-filter: blur(18px);
 }
 
 .forecast-title {
-  margin: 0 0 24px;
+  margin: 0 0 26px;
+
   color: white;
-  font-size: 22px;
-  font-weight: 600;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
 }
 
 .forecast-grid {
   display: grid;
+
   grid-template-columns: repeat(5, 1fr);
-  gap: 18px;
+
+  gap: 20px;
 }
