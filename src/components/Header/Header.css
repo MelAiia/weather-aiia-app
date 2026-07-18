@@ -52,3 +52,13 @@
   transform: rotate(30deg);
   background: rgba(255, 255, 255, 0.15);
 }
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+
+    gap: 12px;
+
+    text-align: center;
+  }
+}

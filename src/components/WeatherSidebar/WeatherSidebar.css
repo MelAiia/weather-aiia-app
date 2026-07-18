@@ -84,3 +84,19 @@
 
   transition: width 0.8s ease;
 }
+
+@media (max-width: 1200px) {
+  .weather-sidebar {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .weather-sidebar {
+    grid-template-columns: 1fr;
+  }
+}

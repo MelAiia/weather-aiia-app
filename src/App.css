@@ -168,3 +168,15 @@ body {
     transform: translateY(0);
   }
 }
+
+@media (max-width: 1200px) {
+  .weather-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .side-column {
+    width: 100%;
+  }
+}
