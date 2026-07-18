@@ -62,3 +62,13 @@
     text-align: center;
   }
 }
+
+@media (max-width: 480px) {
+  .logo span {
+    font-size: 22px;
+  }
+
+  .logo-icon {
+    font-size: 36px;
+  }
+}

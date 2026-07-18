@@ -209,6 +209,33 @@
   .description {
     font-size: 18px;
   }
+
+  .weather-right {
+    margin-top: 10px;
+  }
+
+  .weather-icon svg {
+    width: 120px;
+    height: 120px;
+  }
+
+  .weather-footer {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .city {
+    font-size: 26px;
+  }
+
+  .temperature {
+    font-size: 68px;
+  }
+
+  .weather-stats {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 430px) {

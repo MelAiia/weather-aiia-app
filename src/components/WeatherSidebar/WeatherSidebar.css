@@ -101,8 +101,7 @@
   }
 
   .info-card {
-    min-height: 135px;
-
+    min-height: auto;
     padding: 18px;
   }
 
